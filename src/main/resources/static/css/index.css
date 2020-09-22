@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.cardBox{
+    padding: 1rem;
+}
+.card{
+    float: left;
+    margin: 0 3rem;
+}
+[type=button]:not(:disabled), [type=reset]:not(:disabled),
+[type=submit]:not(:disabled), button:not(:disabled){
+    margin: 0 .6rem;
+}
