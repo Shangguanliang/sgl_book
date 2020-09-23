@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="../../static/css/addBook.css">
 </head>
 <body>
-<form id="formText">
+<form id="formText" action="/book/update/" method="post">
+    <input type="hidden" name="id" value="" th:value="${book.id}">
     <div class="form-group">
         <label for="exampleInputEmail1">书名</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="请输入书名">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="请输入书名" th:value="${book.workName}" name="workName">
         <small id="emailHelp" class="form-text text-muted">别搞什么阴间名字</small>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">作者</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入作者">
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="请输入作者" th:value="${book.worker}" name="worker">
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">类别</label>
@@ -30,7 +31,7 @@
     </div>
 
     <input type="submit" class="btn btn-primary"/>
-    <a class="nav-link" href="../index.html"><input type="button" class="btn btn-primary" value="返回首页"/></a>
+    <a class="nav-link" href="/book/index"><input type="button" class="btn btn-primary" value="返回首页"/></a>
 </form>
 
 
@@ -41,5 +42,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="/js/update.js"></script>
 </body>
 </html>
